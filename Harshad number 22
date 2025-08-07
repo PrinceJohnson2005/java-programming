@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class HarshadNumberChecker {
+    private static int sumOfDigits(int number) {
+        int sum = 0;
+        while (number != 0) {
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
+    }
+    public static boolean isHarshad(int number) {
+        int sum = sumOfDigits(number);
+        return sum != 0 && number % sum == 0;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(""); 
+        int inputNumber = scanner.nextInt();
+        scanner.close();
+        if (isHarshad(inputNumber)) {
+            System.out.println("Harshad Number");
+        } else {
+            System.out.println("Not Harshad Number");
+        }
+    }
+}
